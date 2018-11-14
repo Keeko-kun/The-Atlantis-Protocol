@@ -22,6 +22,11 @@ public class RoomTransition : MonoBehaviour {
     [Header("UI")]
     public FadeUI darkness;
 
+    [Header("Area Introduction")]
+    public bool hasIntroduction;
+    public string message;
+    public AreaIntroduction introduction;
+
     private bool playerStandsInTrigger = false;
     private bool doublePressPrevention = false;
     private Transform player;
@@ -101,6 +106,8 @@ public class RoomTransition : MonoBehaviour {
 
     public IEnumerator DoTransition(Transform targetTrigger, RoomMaster targetRoomMaster, Transform player)
     {
+        RoomTransition targetRT = targetTrigger.GetComponent<RoomTransition>();
+
         Time.timeScale = 0;
 
         player.GetComponent<PreventInput>().InputProhibited = true;
@@ -112,9 +119,9 @@ public class RoomTransition : MonoBehaviour {
 
         Vector3 offset = Vector3.zero;
 
-        if (targetTrigger.GetComponent<RoomTransition>().transitionType == Transition.WalkInTrigger)
+        if (targetRT.transitionType == Transition.WalkInTrigger)
         {
-            switch (targetTrigger.GetComponent<RoomTransition>().exitDirection)
+            switch (targetRT.exitDirection)
             {
                 case Direction.Right:
                     offset = Vector3.right;
@@ -149,14 +156,19 @@ public class RoomTransition : MonoBehaviour {
         doublePressPrevention = false;
         targetRoomMaster.SnapParallax();
 
-        if (targetTrigger.GetComponent<RoomTransition>().exitDirection == Direction.Left)
+        if (targetRT.exitDirection == Direction.Left)
         {
             player.GetComponent<SpriteRenderer>().flipX = true;
         }
 
-        if (targetTrigger.GetComponent<RoomTransition>().targetRoomMaster)
+        if (targetRT.targetRoomMaster)
         {
-            targetTrigger.GetComponent<RoomTransition>().targetRoomMaster.gameObject.SetActive(false);
+            targetRT.targetRoomMaster.gameObject.SetActive(false);
+        }
+
+        if (targetRT.hasIntroduction)
+        {
+            targetRT.introduction.Introduce(targetRT.message);
         }
 
 
