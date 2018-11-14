@@ -1,0 +1,13 @@
+0: Lilia has talked to Hans for the first time.
+1: Edward Cutscene1 Dialouge Change #1
+2: Edward Cutscene1 Dialouge Change #2
+3: Edward Cutscene1 Dialouge Change #3
+4: Edward Cutscene1 Dialouge Change #4
+5: Edward Cutscene1 Dialouge Change #5
+6: Edward Cutscene1 Dialouge Change #6
+7: Edward Cutscene1 Completed
+8: Lilia has viewed the ladder cutscene in her house.
+9: Robyn's Dialouge 01
+10: Robyn's Dialouge 02
+11: Robyn's Dialouge 03
+12: Robyn's Dialouge 04

@@ -1,0 +1,11 @@
+tfpSave = (bool) determines if a save file exists in a slot.
+tfpLocation = (string) the location of the save file.
+tfpHealth = (float) current health of the player.
+tfpMaxHealth = (float) maximum health of the player;
+tfpSpawn = (string) the spawn name of that scene.
+tfpScene = (string) name of the scene.
+tfpInvItems = (string[]) all items in the inventory.
+tfpInvStack = (int[]) current stack of all items in the inventory.
+tfpInvEquipped = (bool[]) equipped state of the item.
+tfpEvents = (bool[]) the list of events.
+tfpInputs = (string[]) a collection of the player's preferred inputs. (not bound to slot)

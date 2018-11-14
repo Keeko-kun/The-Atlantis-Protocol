@@ -1,0 +1,99 @@
+==Cutscene_Edward_01==
+!pause 0.5
+!flipx EdwardSprite
+!pause 1
+!speak EdwardText //01
+!pause 1
+!flipx EdwardSprite 
+!pause 0.5
+!move EdwardMove 3
+!pause 1
+!speak EdwardText //02
+!pause 0.5
+!flipx EdwardSprite
+!pause 1
+!move EdwardMove -5
+!pause 0.5
+!speak EdwardText //03
+!pause 0.5
+!flipx EdwardSprite
+!pause 1
+!speak EdwardText //04
+!pause 0.5
+!flipx EdwardSprite
+!pause 1
+!speak EdwardText //05
+!pause 0.5
+!flipx EdwardSprite
+!pause 1
+!move EdwardMove 4
+!pause 1
+!flipx EdwardSprite
+!pause 1
+!speak EdwardText //06
+!pause 0.75
+!flipx EdwardSprite
+!pause 1.75
+!flipx EdwardSprite
+!pause 0.75
+!move EdwardMove -5
+!pause 1
+!speak EdwardText //07
+!pause 1
+!flipx EdwardSprite
+!pause 0.75
+->END
+
+==Cutscene_Edward_02==
+!pause 0.5
+!flipx EdwardSprite
+!pause 0.75
+!speak EdwardText //08
+!pause 0.5
+!flipx EdwardSprite
+!flipx PlayerSprite
+!move PlayerMove 3
+!pause 0.5
+->END
+
+==Cutscene_Ladder==
+!pause 0.75
+!speak HansText //Hans_03
+!pause 0.5
+->END
+
+==Cutscene_Patsy_Stop==
+!pause 0.5
+!speak PatsyText //Patsy_01
+!pause 0.5
+!flipx PlayerSprite
+!move PlayerMove -6
+!pause 0.5
+->END
+
+==Cutscene_Robyn_01==
+!pause 0.5
+!speak RobynText //Robyn_01
+!pause 1.5
+!flipx RobynSprite
+!pause 1.5
+!speak RobynText //Robyn_02
+!pause 0.5
+!flipx RobynSprite
+!pause 0.5
+!speak RobynText //Robyn_03
+!pause 0.5
+!flipx RobynSprite
+!pause 0.5
+!speak RobynText //Robyn_04
+!pause 0.5
+!flipx RobynSprite
+!pause 0.5
+!speak RobynText //Robyn_05
+!pause 0.5
+->END
+
+==SaveGame==
+!save
+!speak SaveText
+->END
