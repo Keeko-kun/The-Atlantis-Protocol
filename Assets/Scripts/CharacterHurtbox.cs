@@ -47,9 +47,13 @@ public class CharacterHurtbox : MonoBehaviour {
         }
         else if (collision.tag == Tags.Coin.ToString())
         {
-            Destroy(collision.gameObject);
-            CharacterInventory ci = GetComponentInParent<CharacterInventory>();
-            ci.GiveItem(ci.coin, 1);
+            if (collision.GetComponent<CoinBehaviour>().Enabled)
+            {
+                collision.GetComponent<CoinBehaviour>().Enabled = false;
+                Destroy(collision.gameObject);
+                CharacterInventory ci = GetComponentInParent<CharacterInventory>();
+                ci.GiveItem(ci.coin, 1);
+            }
         }
     }
 }

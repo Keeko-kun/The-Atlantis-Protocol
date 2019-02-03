@@ -11,6 +11,9 @@ public class FadeGameWorld : MonoBehaviour {
     public List<SpriteRenderer> spriteRenderers;
     public List<TextMeshPro> textMeshes;
 
+    [HideInInspector]
+    public bool disabled;
+
     private float alpha = 0;
     private float fadeDir;
     private PreventInput player;
@@ -43,21 +46,28 @@ public class FadeGameWorld : MonoBehaviour {
 
     void Update()
     {
-        if (player)
+        if (disabled)
         {
-            if (player.InputProhibited)
-                visible = false;
-            else
-                visible = true;
-        }
-
-        if (visible)
-        {
-            fadeDir = 1;
+            fadeDir = -1;
         }
         else
         {
-            fadeDir = -1;
+            if (player)
+            {
+                if (player.InputProhibited)
+                    visible = false;
+                else
+                    visible = true;
+            }
+
+            if (visible)
+            {
+                fadeDir = 1;
+            }
+            else
+            {
+                fadeDir = -1;
+            }
         }
 
         if (alpha >= 0 || alpha <= 1)

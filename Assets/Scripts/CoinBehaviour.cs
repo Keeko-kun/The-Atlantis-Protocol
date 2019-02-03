@@ -13,8 +13,11 @@ public class CoinBehaviour : MonoBehaviour
     private Rigidbody2D rb2d;
     private SpriteRenderer sr;
 
+    public bool Enabled { get; set; }
+
     void OnEnable()
     {
+        Enabled = true;
         rb2d = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         StartCoroutine(SetVelocity());
